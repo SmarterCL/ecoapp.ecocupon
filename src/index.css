@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #2D6A4F;
+    --primary-light: #40916C;
+    --secondary: #D8E2DC;
+    --accent: #FF9F1C;
+    --bg: #F8FAF8;
+    --card-bg: #FFFFFF;
+    --text-main: #1B4332;
+    --text-muted: #52796F;
+    --border: #E0E7E1;
+    
+    --surface: var(--bg);
+    --surface-bright: #ffffff;
+    --surface-dim: #F0F4F0;
+    --surface-container-lowest: #ffffff;
+    --surface-container-low: #F1F4F1;
+    --surface-container: #EEF2EE;
+    --surface-container-high: #E8EDE8;
+    --surface-container-highest: #E0E7E1;
+    
+    --on-surface: var(--text-main);
+    --on-surface-variant: var(--text-muted);
+    --on-primary: #ffffff;
+    
+    --outline: var(--border);
+    --outline-variant: #D1D9D2;
+    
+    --error: #ba1a1a;
+    --error-container: #ffdad6;
+    
+    --font-headline: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@theme {
+  --font-headline: var(--font-headline);
+  --font-body: var(--font-body);
+  
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  
+  --color-surface: var(--surface);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body {
+  @apply bg-surface text-on-surface font-body antialiased;
+}
+
+.headline {
+  @apply font-headline;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+}
+
+.coupon-ticket {
+  @apply relative bg-white border border-dashed border-primary-light rounded-xl overflow-visible;
+}
+
+.coupon-ticket::before, .coupon-ticket::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--bg);
+  border-radius: 50%;
+  left: -11px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid var(--border);
+}
+
+.coupon-ticket::after {
+  left: auto;
+  right: -11px;
+}
+
+.scanner-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: scan 3s ease-in-out infinite;
+}
+
+@keyframes scan {
+  0%, 100% { top: 10%; }
+  50% { top: 90%; }
+}
+
