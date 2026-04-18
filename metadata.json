@@ -1,6 +1,6 @@
 {
   "name": "Ecocupon.cl",
-  "description": "Plantea un impacto positivo con beneficios ecológicos y canastas orgánicas.",
+  "description": "App móvil de Ecocupon.cl para ahorro sustentable y canastas orgánicas, impulsada por Capacitor para Android.",
   "requestFramePermissions": ["camera"],
-  "majorCapabilities": ["AI-powered coupon scanning", "Sustainable marketplace"]
+  "majorCapabilities": ["Capacitor Android Support", "AI-powered coupon scanning", "Sustainable marketplace"]
 }
